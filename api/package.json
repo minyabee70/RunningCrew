@@ -6,7 +6,8 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test:subscription": "tsx src/scripts/test-subscription-scenarios.ts"
+    "test:subscription": "tsx src/scripts/test-subscription-scenarios.ts",
+    "db:schema": "psql \"%DATABASE_URL%\" -f db/schema.sql"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

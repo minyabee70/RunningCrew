@@ -1,0 +1,37 @@
+# Render Blueprint — RunningCrew API + PostgreSQL
+# Deploy: https://dashboard.render.com/blueprints → Connect GitHub repo → Apply
+
+databases:
+  - name: runningcrew-db
+    plan: free
+    databaseName: running_crew
+    user: running_crew
+
+services:
+  - type: web
+    name: runningcrew-api
+    runtime: docker
+    region: singapore
+    plan: free
+    rootDir: api
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3001"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: runningcrew-db
+          property: connectionString
+      - key: WEB_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_TIMEOUT_MS
+        value: "30000"
+      - key: CREATOR_EMAIL
+        value: minyabee70@gmail.com
