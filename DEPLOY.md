@@ -65,12 +65,49 @@ npx vercel --prod
 
 ---
 
-## 3. Google OAuth 설정
+## 3. Google OAuth 설정 (`invalid_client` 해결)
 
-[Google Cloud Console](https://console.cloud.google.com/) → APIs & Services → Credentials
+`401 invalid_client` / **OAuth client was not found** → Vercel의 `GOOGLE_CLIENT_ID`가 비어 있거나 `placeholder` 등 잘못된 값입니다.
 
-- 승인된 JavaScript 원본: Vercel URL
-- 승인된 리디렉션 URI: `https://<domain>/api/auth/callback/google`
+### 3-1. Google Cloud Console
+
+1. [Google Cloud Console](https://console.cloud.google.com/) → 프로젝트 선택(또는 새로 생성)
+2. **APIs & Services** → **OAuth consent screen**
+   - User Type: **External** (테스트 중이면 Test users에 본인 Gmail 추가)
+   - 앱 이름·이메일 입력 후 저장
+3. **APIs & Services** → **Credentials** → **Create Credentials** → **OAuth client ID**
+   - Application type: **Web application**
+   - **Authorized JavaScript origins** (둘 다 추가 권장):
+     - `https://running-crew-three.vercel.app`
+     - `https://running-crew-minyabee70-2026s-projects.vercel.app`
+   - **Authorized redirect URIs** (둘 다 추가 권장):
+     - `https://running-crew-three.vercel.app/api/auth/callback/google`
+     - `https://running-crew-minyabee70-2026s-projects.vercel.app/api/auth/callback/google`
+4. 생성 후 **Client ID** (`….apps.googleusercontent.com`)와 **Client secret** 복사
+
+### 3-2. Vercel 환경 변수 업데이트
+
+[Vercel → running-crew → Settings → Environment Variables](https://vercel.com)
+
+| 변수 | 값 |
+|------|-----|
+| `GOOGLE_CLIENT_ID` | `123456789-xxxx.apps.googleusercontent.com` |
+| `GOOGLE_CLIENT_SECRET` | `GOCSPX-…` |
+| `NEXTAUTH_URL` | `https://running-crew-three.vercel.app` |
+| `NEXTAUTH_SECRET` | 32자 이상 랜덤 문자열 |
+
+CLI 예시:
+
+```bash
+cd web
+npx vercel env rm GOOGLE_CLIENT_ID production -y
+npx vercel env rm GOOGLE_CLIENT_SECRET production -y
+echo "YOUR_CLIENT_ID" | npx vercel env add GOOGLE_CLIENT_ID production
+echo "YOUR_CLIENT_SECRET" | npx vercel env add GOOGLE_CLIENT_SECRET production
+npx vercel --prod
+```
+
+변수 수정 후 **Deployments → Redeploy** 필수.
 
 ---
 
