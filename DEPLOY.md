@@ -4,7 +4,7 @@
 
 | 구성요소 | 플랫폼 | URL (예시) |
 |----------|--------|------------|
-| Web | Vercel | `https://running-crew.vercel.app` |
+| Web | Vercel | `https://running-crew-three.vercel.app` |
 | API | Render (Docker) | `https://runningcrew-api.onrender.com` |
 | DB | Render PostgreSQL | 내부 연결 |
 
@@ -18,7 +18,7 @@
 2. GitHub `minyabee70/RunningCrew` 연결
 3. `render.yaml` 적용 후 **Apply**
 4. 수동 환경 변수 설정:
-   - `WEB_URL` → Vercel 배포 URL (예: `https://running-crew.vercel.app`)
+   - `WEB_URL` → `https://running-crew-three.vercel.app`
    - `GEMINI_API_KEY` → Google AI Studio 키
 5. DB 스키마 적용 (Render Shell 또는 로컬):
 

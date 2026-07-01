@@ -29,7 +29,7 @@ type TabId = 'overview' | 'charts' | 'cross' | 'deep' | 'ai';
 
 export default function SessionDetailPage() {
   const params = useParams();
-  const id = typeof params.id === 'string' ? params.id : '';
+  const id = typeof params?.id === 'string' ? params.id : '';
   const { apiToken, userId, t, heightCm, weightKg } = useSettings();
   const { session, metrics, runningScore, loading } = useSessionAnalytics(id, apiToken);
   const [previousSession, setPreviousSession] = useState<RunningSession | null>(null);

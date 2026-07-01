@@ -15,7 +15,7 @@ const navItems = [
 ];
 
 export function SidebarNav({ weekKm = 0, weekGoalKm = 50 }: { weekKm?: number; weekGoalKm?: number }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const { t, role } = useSettings();
   const isAdmin = role === 'creator' || role === 'admin';
 

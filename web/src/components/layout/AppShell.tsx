@@ -11,7 +11,7 @@ import { MobileTabBar } from './MobileTabBar';
 import { CommandPalette, useCommandPalette } from './CommandPalette';
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const { apiToken, userId } = useSettings();
   const { open, setOpen } = useCommandPalette();
   const [weekKm, setWeekKm] = useState(0);

@@ -14,7 +14,7 @@ const tabs = [
 ];
 
 export function MobileTabBar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '';
   const { t } = useSettings();
 
   return (
