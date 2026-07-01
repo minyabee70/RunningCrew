@@ -41,8 +41,9 @@ curl https://runningcrew-api.onrender.com/health/db
 ### GitHub 연동 (권장)
 
 1. [Vercel New Project](https://vercel.com/new) → Import `minyabee70/RunningCrew`
-2. **Root Directory**: `web`
-3. Environment Variables:
+2. **Root Directory**: `web` (필수 — 루트에서 빌드하면 Next.js 미감지 오류 발생)
+3. **Install Command**: `npm ci --no-workspaces` (`web/vercel.json`에 설정됨 — monorepo workspace 설치 방지)
+4. Environment Variables:
 
 | 변수 | 값 |
 |------|-----|
