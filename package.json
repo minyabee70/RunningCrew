@@ -1,0 +1,12 @@
+{
+  "name": "running-crew",
+  "private": true,
+  "workspaces": ["web", "api", "mobile"],
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:api": "npm run dev -w api",
+    "dev:mobile": "npm run start -w mobile",
+    "build": "npm run build --workspaces --if-present",
+    "test:subscription": "npm run test:subscription -w api"
+  }
+}

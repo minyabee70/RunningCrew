@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --rc-bg: #0f1419;
+  --rc-surface: #1a1f26;
+  --rc-border: #2d333b;
+  --rc-accent: #3b82f6;
+  --rc-success: #22c55e;
+  --rc-warning: #f59e0b;
+  --rc-danger: #ef4444;
+  --rc-text: #e6edf3;
+  --rc-muted: #8b949e;
+  --rc-radius: 12px;
+  --rc-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: var(--rc-bg);
+  color: var(--rc-text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#running-crew-root.theme-white {
+  filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+}
+
+#running-crew-root.theme-cosmic {
+  filter: hue-rotate(270deg);
+}
+
+#running-crew-root.theme-ocean {
+  filter: hue-rotate(160deg);
+}
+
+#running-crew-root.theme-forest {
+  filter: hue-rotate(220deg);
+}
