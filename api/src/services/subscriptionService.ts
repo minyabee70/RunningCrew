@@ -1,6 +1,6 @@
 import type { EffectiveTier, User } from '../types';
 
-const TRIAL_DAYS = 5;
+const TRIAL_DAYS = 10;
 
 export function daysSince(date: Date | null): number {
   if (!date) return Infinity;

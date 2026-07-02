@@ -26,7 +26,7 @@ npm run dev:mobile
 ## Phase 1 (no payment PG)
 
 - Google OAuth login
-- 5-day trial → member tier
+- 10-day trial → member tier
 - Admin manual subscription at `/admin/users`
 - Platform stats at `/admin/stats`
 - OSM route map with metric coloring
