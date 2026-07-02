@@ -49,7 +49,7 @@ function assert(name: string, cond: boolean) {
   }
 }
 
-console.log('Scenario 1: Google signup → 10-day trial (subscriber tier)');
+console.log('Scenario 1: Google signup → 5-day trial (subscriber tier)');
 {
   const u = baseUser({ trial_started_at: daysAgo(0), subscription_status: 'trial' });
   assert('trial days left > 0', trialDaysLeft(u) > 0);
@@ -57,9 +57,9 @@ console.log('Scenario 1: Google signup → 10-day trial (subscriber tier)');
   assert('precision analysis allowed', canAccessFeature(resolveEffectiveTier(u), 'analysis_precision'));
 }
 
-console.log('\nScenario 2: trial_started_at 11 days ago → member lock');
+console.log('\nScenario 2: trial_started_at 6 days ago → member lock');
 {
-  const u = baseUser({ trial_started_at: daysAgo(11), subscription_status: 'trial' });
+  const u = baseUser({ trial_started_at: daysAgo(6), subscription_status: 'trial' });
   assert('trial days left = 0', trialDaysLeft(u) === 0);
   assert('effective tier member', resolveEffectiveTier(u) === 'member');
   assert('precision analysis locked', !canAccessFeature(resolveEffectiveTier(u), 'analysis_precision'));

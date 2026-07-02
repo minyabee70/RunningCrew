@@ -3,7 +3,7 @@ import type { LegalDocument } from './privacy';
 export const termsOfService: Record<'ko' | 'en', LegalDocument> = {
   ko: {
     title: '애플리케이션 서비스 약관',
-    lastUpdated: '최종 업데이트: 2026년 7월 2일',
+    lastUpdated: '최종 업데이트: 2026년 7월 3일',
     sections: [
       {
         heading: '1. 목적',
@@ -31,7 +31,7 @@ export const termsOfService: Record<'ko' | 'en', LegalDocument> = {
       {
         heading: '4. 서비스의 이용 및 유료 전환',
         paragraphs: [
-          '회사는 이용자에게 가입일로부터 10일간의 무료 체험 기간을 제공합니다. 체험 기간 동안 이용자는 유료 구독자와 동일한 프리미엄 기능(정밀·심층 분석 등)을 이용할 수 있습니다.',
+          '회사는 이용자에게 가입일로부터 5일간의 무료 체험 기간을 제공합니다. 체험 기간 동안 이용자는 유료 구독자와 동일한 프리미엄 기능(정밀·심층 분석 등)을 이용할 수 있습니다.',
           '무료 체험 기간이 종료된 후 서비스의 프리미엄 기능을 계속 이용하기 위해서는 유료 구독 결제를 완료해야 합니다. 결제가 완료되지 않은 경우 회사는 「11. 서비스 이용 제한」에 따라 이용을 제한할 수 있습니다.',
           '유료 서비스의 요금 및 결제 방식은 다음과 같습니다.',
           '· 월간 구독: 3,000원 (매월 자동 결제)',
@@ -114,7 +114,7 @@ export const termsOfService: Record<'ko' | 'en', LegalDocument> = {
   },
   en: {
     title: 'Terms of Service',
-    lastUpdated: 'Last updated: July 2, 2026',
+    lastUpdated: 'Last updated: July 3, 2026',
     sections: [
       {
         heading: '1. Purpose',
@@ -142,7 +142,7 @@ export const termsOfService: Record<'ko' | 'en', LegalDocument> = {
       {
         heading: '4. Free trial and paid conversion',
         paragraphs: [
-          'The Company provides a 10-day free trial from the signup date. During the trial, users may access the same premium features as paid subscribers (precision and advanced analysis, etc.).',
+          'The Company provides a 5-day free trial from the signup date. During the trial, users may access the same premium features as paid subscribers (precision and advanced analysis, etc.).',
           'After the free trial ends, you must complete a paid subscription to continue using premium features. If payment is not completed, the Company may restrict access as described in Section 11.',
           'Paid plans and billing are as follows:',
           '· Monthly subscription: KRW 3,000 (auto-billed every month)',
