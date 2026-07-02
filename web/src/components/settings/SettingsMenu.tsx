@@ -4,6 +4,7 @@ import { LanguageSelector } from './LanguageSelector';
 import { ThemeSelector } from './ThemeSelector';
 import { FontScaleControl } from './FontScaleControl';
 import { BiometricsModal } from './BiometricsModal';
+import { LegalLinksSection } from './LegalLinksSection';
 import { useSettings } from '@/context/SettingsProvider';
 
 export function SettingsMenu() {
@@ -35,10 +36,11 @@ export function SettingsMenu() {
         <h2 className="font-semibold">{t('settings.font')}</h2>
         <FontScaleControl />
       </section>
-      <section className="space-y-3">
+      <section className="space-y-3 pb-4 border-b border-[var(--rc-border)]">
         <h2 className="font-semibold">{t('settings.biometrics')}</h2>
         <BiometricsModal />
       </section>
+      <LegalLinksSection />
     </div>
   );
 }

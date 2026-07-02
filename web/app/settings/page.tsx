@@ -10,7 +10,7 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-2xl">
       <div>
         <h1 className="text-2xl font-bold">{t('nav.settings')}</h1>
-        <p className="text-sm text-[var(--rc-muted)] mt-1">언어, 테마, 생체 정보를 관리합니다.</p>
+        <p className="text-sm text-[var(--rc-muted)] mt-1">{t('settings.desc')}</p>
       </div>
       <Card>
         <CardHeader>

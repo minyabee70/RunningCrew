@@ -31,7 +31,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       .catch(() => setWeekKm(0));
   }, [apiToken, userId]);
 
-  if (pathname === '/login') return <>{children}</>;
+  if (pathname === '/login' || pathname === '/privacy' || pathname === '/terms') {
+    return <>{children}</>;
+  }
 
   return (
     <div id="running-crew-root" className="min-h-screen flex flex-col bg-[var(--rc-bg)]">

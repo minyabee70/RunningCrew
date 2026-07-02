@@ -84,6 +84,9 @@ npx vercel --prod
      - `https://running-crew-three.vercel.app/api/auth/callback/google`
      - `https://running-crew-minyabee70-2026s-projects.vercel.app/api/auth/callback/google`
 4. 생성 후 **Client ID** (`….apps.googleusercontent.com`)와 **Client secret** 복사
+5. OAuth consent screen에 **Privacy Policy URL** / **Terms of Service URL** 등록:
+   - `https://running-crew-three.vercel.app/privacy`
+   - `https://running-crew-three.vercel.app/terms`
 
 ### 3-2. Vercel 환경 변수 업데이트
 
